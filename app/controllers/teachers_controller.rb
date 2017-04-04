@@ -24,6 +24,8 @@ class TeachersController < ApplicationController
   def destroy
     teacher.destroy
     redirect_to teachers_path, notice: I18n.t('shared.deleted', resource: 'Teacher')
+    # Ask why I may not work here I18n
+    flash[:notice] = "Teacher has been deleted!"
   end
 
   private
