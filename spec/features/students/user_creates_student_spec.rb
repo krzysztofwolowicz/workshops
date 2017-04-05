@@ -26,4 +26,11 @@ feature 'User creates student' do
     click_button 'Create Student'
     expect(page).to have_content "can't be blank"
   end
+  scenario 'with birthdate' do
+    fill_in 'First name', with: 'Adrian'
+    fill_in 'Last name', with: 'Nowacki'
+    fill_in 'Birthdate', with: Date.new(1996,3,14)
+    click_button 'Create Student'
+    expect(page).to have_content 'Student has been created!'
+  end
 end
