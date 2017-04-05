@@ -41,4 +41,13 @@ SubjectItem.all.each do |subject_item|
   end
 end
 
+30.times do
+  Payment.create!(
+    student: students.sample,
+    value: Faker::Number.between(2, 1000),
+    date: Faker::Date.between(1.year.ago, Date.today),
+    for_month: Faker::Date.between(3.year.ago, Date.today)
+  )
+end
+
 puts "Seeds: done"
