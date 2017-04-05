@@ -1,14 +1,11 @@
 
 language: ruby
-sudo: false
+
 rvm:
-    - 2.2.3
-script:
-  - RAILS_ENV=test bundle exec rake db:schema:load --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rspec spec/
+  - 2.2.3
+
 before_script:
-  - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database workshops_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
 addons:
   postgresql: '9.3'

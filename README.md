@@ -1,3 +1,3 @@
 Workshop
-  ================      ================
-  [![Build Status](https://travis-ci.org/krzysztofwolowicz/workshops.svg?branch=master)](https://travis-ci.org/krzysztofwolowicz/workshops)
+================
+[![Build Status](https://travis-ci.org/krzysztofwolowicz/workshops.svg?branch=master)](https://travis-ci.org/krzysztofwolowicz/workshops)
