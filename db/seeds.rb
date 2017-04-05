@@ -1,6 +1,6 @@
 puts "Seeds: start"
 TEACHER_TITLES = %w(Dr. Prof. TA)
-User.create!(email: 'admin@admin.com', encrypted_password: 'adminadmin')
+User.create!(email: 'admin@admin.com', password: 'adminadmin')
 
 3.times do
   Teacher.create!(
@@ -21,7 +21,8 @@ end
 25.times do
   Student.create!(
     first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name
+    last_name: Faker::Name.last_name,
+    birthdate: Faker::Date.birthday(20, 30)
   )
 end
 
