@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :teachers do
     get :subjects
   end
-  resources :payments
+  resources :payments, only: [:index, :new, :create, :show]
 
   get 'reports/subjects', to: 'reports#subjects', as: :report_subjects
 
