@@ -1,5 +1,6 @@
 = simple_form_for payment do |f|
-  = f.input :student_id
-  = f.input :date
-  = f.input :value
+  = f.input :date, as: :hidden, input_html: { value: Date.today }
+  = f.input :value, collection: 1..1000, selected: 500
+  = f.input :for_month, discard_day: true, start_year: Date.today.year - 5, end_year: Date.today.year
+  = f.association :student, collection: Student.all, label_method: :last_name
   = f.button :submit

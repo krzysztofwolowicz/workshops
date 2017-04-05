@@ -1,11 +1,16 @@
-- breadcrumb :payment, payment
 %table.table.table-condensed
   %tbody
     %tr
-      %td= "#{t('payment.columns.date')}:"
-      %td= payment.date
+      %td= "#{t('payments.columns.student')}:"
+      %td= payment.student.decorate.full_name
     %tr
-      %td= "#{t('payment.columns.value')}:"
+      %td= "#{t('payments.columns.for_month')}:"
+      %td= payment.decorate.for_month
+    %tr
+      %td= "#{t('payments.columns.value')}:"
       %td= payment.value
+    %tr
+      %td= "#{t('payments.columns.date')}:"
+      %td= payment.date
 
 = link_to t('shared.back'), payments_path, class: 'btn btn-default'
