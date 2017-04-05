@@ -1,0 +1,29 @@
+- breadcrumb :payments
+= link_to t('shared.add_new_payment'), new_payment_path, class: 'btn btn-default'
+%table.table.table-condensed
+  %thead
+    %tr
+      %td= t('payment.columns.students')
+      %td= t('payment.columns.date')
+      %td= t('payment.columns.value')
+      %td Actions
+  %tbody
+    - students.all.each do |student|
+      %tr
+        %td{:align => "left", :colspan => "4"}= student.decorate.full_name
+      %td
+        - student.payments.all.each do |payment|
+          %tr
+            %td
+            %td= payment.date
+            %td= payment.value
+            %td
+              = link_to payment_path(payment), { title: t('shared.show') } do
+                %button.btn.btn-default
+                  = fa_icon "search"
+              = link_to edit_payment_path(payment), { title: t('shared.edit') } do
+                %button.btn.btn-default
+                  = fa_icon "edit"
+              = link_to payment_path(payment), { method: :delete, title: t('shared.delete') } do
+                %button.btn.btn-default
+                  = fa_icon "times"
