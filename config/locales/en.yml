@@ -36,8 +36,9 @@ en:
       full_name: Full name
       avg_notes: Notes avarange
       birthdate: birthdate
-  payment:
+  payments:
     columns:
-      students: Students
-      value: Value
+      student: Student
+      value: Sum in dollars
       date: Date
+      for_month: Payment for
